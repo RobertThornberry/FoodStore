@@ -1,33 +1,141 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+
+    ViewBag.Title = "Index";
+
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+@model IEnumerable<FoodStore.Models.FoodModel>
+@model IEnumerable<FoodStore.Models.ImageModel>
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-    </div>
-</main>
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Images</title>
+
+    <style>
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+    <html>
+
+    <head>
+
+        <meta name="viewport" content="width=device-width" />
+
+        <title>Test</title>
+
+
+
+        <style>
+
+            .label1 {
+                font-size: 24px;
+                color: chocolate;
+                font-family: Arial;
+                font-weight: bold;
+                display: block;
+            }
+
+
+
+            #label2 {
+                font-size: 20px;
+                color: cornflowerblue;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <h1>Images</h1>
+
+        <div>
+
+
+
+
+
+
+
+            <br />
+
+            <br />
+
+            <div class="container mt-3">
+
+                <div class="d-flex flex-wrap bg-light">
+
+                    @foreach (var im in Model)
+
+                    {
+
+                        <div class="p-2 border">
+
+                            <div class="card" style="width: 18rem;">
+
+                                <img src="@Url.Action("GetImage", "Home", new { id = im.ID })" alt="@im.vegetable" />
+
+                                <div class="card-body">
+
+                                    <h5 class="card-title">@Html.DisplayFor(m => im.vegetable)</h5>
+
+                                    <p class="card-text">@Html.DisplayFor(m => im.vegetable), @Html.DisplayFor(m => im.vegetable)</p>
+
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    }
+
+                </div>
+
+            </div>
+
+
+
+            <br />
+
+            <br />
+
+            <br />
+
+
+
+            @Html.ActionLink("Refresh this page", "../test")
+
+
+
+        </div>
+
+    </body>
+
+</html>
