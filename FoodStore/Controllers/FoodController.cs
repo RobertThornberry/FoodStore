@@ -1,30 +1,46 @@
 ﻿using System;
-using FoodStore.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FoodStore.Models;
 
 namespace FoodStore.Controllers
 {
     public class FoodController : Controller
     {
-        // GET: Food
+        private YourDbContext db = new YourDbContext();
+
         public ActionResult Index()
         {
-            List<FoodModel> food = new List<FoodModel>();
+            var imagesWithStockAndPrice = (from i in db.ImageDataTable
+                                           join f in db.FoodDataTable
+                                           on i.vegetable.ToLower() equals f.Vegetable.ToLower()
+                                           select new ImageFoodViewModel
+                                           {
+                                               ID = i.ID,
+                                               vegetable = i.vegetable,
+                                               ImageSource = i.ImageSource,
+                                               Category = i.Category,
+                                               Price = i.Price
+                                           }).ToList();
 
-            food.Add(new FoodModel(0, "Carrot", "A Secret Gun", "Vegetable", 1.50, 7));
-
-            food.Add(new FoodModel(1, "Broccoli", "A Secret Knife", "Vegetable", 2.50, 4));
-
-            food.Add(new FoodModel(2, "Potato", "A Secret Rope", "Vegetable", 0.50, 10));
-
-            food.Add(new FoodModel(3, "Parsnip", "A Secret Car", "Vegetable", 1.25, 13));
+            return View(imagesWithStockAndPrice);
+        }
 
 
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
 
-            return View("Index", food);
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
         }
     }
 }

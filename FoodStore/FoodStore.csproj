@@ -176,8 +176,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\FoodDataModel.cs" />
+    <Compile Include="Models\DietaryInfoModel.cs" />
+    <Compile Include="Models\YourDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageFoodViewModel.cs" />
+    <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

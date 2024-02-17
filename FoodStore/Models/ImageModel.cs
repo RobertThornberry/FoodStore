@@ -12,26 +12,27 @@ namespace FoodStore.Models
     public class ImageModel
     {
         [Key]
+        [Column("ID")]
         public int ID { get; set; }
 
         [Required]
         [StringLength(100)]
         public string vegetable { get; set; }
 
+        [Required]
+        [StringLength(100)]
+        public string ImageLink { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string Category { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string Price { get; set; }
 
         [Required]
         [Column(TypeName = "varbinary(MAX)")]
         public byte[] ImageSource { get; set; }
-    }
-
-    public class YourDbContext : DbContext
-    {
-        public DbSet<ImageModel> ImageDataTable { get; set; } // DbSet for your Image model
-        // Other DbSet properties for your other models, if any
-
-        // Constructor to specify connection string
-        public YourDbContext() : base("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FoodDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
-        {
-        }
     }
 }
