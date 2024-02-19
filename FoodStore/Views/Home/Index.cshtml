@@ -105,7 +105,9 @@
 
                                     <p class="card-text">@Html.DisplayFor(m => im.Category), @Html.DisplayFor(m => im.Price)</p>
 
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <a href="@Url.Action("Details", "Home", new { id = im.ID })" class="btn btn-primary">Go somewhere</a>
+
+
 
                                 </div>
 
@@ -114,6 +116,7 @@
                         </div>
 
                     }
+
 
                 </div>
 

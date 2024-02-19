@@ -15,7 +15,7 @@ namespace FoodStore.Controllers
         {
             var imagesWithStockAndPrice = (from i in db.ImageDataTable
                                            join f in db.FoodDataTable
-                                           on i.vegetable.ToLower() equals f.Vegetable.ToLower()
+                                           on i.vegetable.ToLower() equals f.vegetable.ToLower()
                                            select new ImageFoodViewModel
                                            {
                                                ID = i.ID,
@@ -27,7 +27,6 @@ namespace FoodStore.Controllers
 
             return View(imagesWithStockAndPrice);
         }
-
 
         public ActionResult About()
         {

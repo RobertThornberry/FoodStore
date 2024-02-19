@@ -7,6 +7,7 @@ using System.Web;
 
 namespace FoodStore.Models
 {
+    [Table("DietaryInfoTable")]
     public class DietaryInfoModel
     {
             [Key]

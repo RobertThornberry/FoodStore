@@ -17,7 +17,7 @@ namespace FoodStore.Models
         [Required]
         [Column("Vegetable")]
         [StringLength(100)]
-        public string Vegetable { get; set; }
+        public string vegetable { get; set; }
 
         [Required]
         [Column("Serving size")]
@@ -45,7 +45,7 @@ namespace FoodStore.Models
         public string Category { get; set; }
 
         [Required]
-        [Range(0.01, double.MaxValue, ErrorMessage = "The price of this item needs to be more that £0.00")]
-        public decimal Price { get; set; }
+        [StringLength(100)]
+        public string Price { get; set; }
     }
 }

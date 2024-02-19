@@ -1,44 +1,109 @@
-﻿@model FoodStore.Models.FoodModel
+﻿@model FoodStore.Models.DetailsViewModel
 
-@{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>Details</h2>
-
-<div>
-    <h4>GadgetModel</h4>
-    <hr />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details</title>
+</head>
+<body>
+    <h2>Details</h2>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Vegetable)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Vegetable)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Serving size)
+            @Html.DisplayNameFor(model => model.ImageSource)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Serving size)
+            <img src="@Url.Action("GetImage", "Home", new { id = Model.ID })" alt="@Model.Vegetable" />
+
+            <!-- Html.DisplayFor(model => model.ImageSource) -->
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Country of origin)
+            @Html.DisplayNameFor(model => model.Energy)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Country of origin)
+            @Html.DisplayFor(model => model.Energy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saturates)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Saturates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carbohydrates)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carbohydrates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sugars)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sugars)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fibre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fibre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Protein)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Protein)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Salt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServingSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServingSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryOfOrigin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CountryOfOrigin)
         </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Storage)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Storage)
         </dd>
@@ -46,7 +111,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Packaging)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Packaging)
         </dd>
@@ -54,7 +118,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Stock)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Stock)
         </dd>
@@ -62,7 +125,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Category)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Category)
         </dd>
@@ -70,13 +132,9 @@
         <dt>
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Price)
         </dd>
     </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</body>
+</html>
