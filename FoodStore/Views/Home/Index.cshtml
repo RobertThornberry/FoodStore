@@ -35,7 +35,7 @@
 
 
         tr:nth-child(even) {
-            background-color: #dddddd;
+            background-color: lightblue;
         }
     </style>
 
@@ -59,7 +59,9 @@
                 display: block;
             }
 
-
+            body {
+                background-color: lightblue;
+            }
 
             #label2 {
                 font-size: 20px;
@@ -71,10 +73,14 @@
 
     <body>
 
-        <h1>Images</h1>
+        <h1>Our Products</h1>
 
         <div>
-
+            
+            <div>
+                <a href="@Url.Action("CreateFood", "Home")" class="btn btn-primary">Create Food</a>
+                <a href="@Url.Action("CreateImage", "Home")" class="btn btn-primary">Create Image</a>
+            </div>
 
 
 
@@ -89,13 +95,14 @@
 
                 <div class="d-flex flex-wrap bg-light">
 
+                    <!--code for the individual items-->
                     @foreach (var im in Model)
 
                     {
 
-                        <div class="p-2 border">
+                        <div class="p-2 border" style="background-color: lightblue">
 
-                            <div class="card" style="width: 18rem;">
+                            <div class="card" style="width: 18rem; background-color: plum">
 
                                 <img src="@Url.Action("GetImage", "Home", new { id = im.ID })" alt="@im.vegetable" />
 
@@ -105,8 +112,11 @@
 
                                     <p class="card-text">@Html.DisplayFor(m => im.Category), @Html.DisplayFor(m => im.Price)</p>
 
-                                    <a href="@Url.Action("Details", "Home", new { id = im.ID })" class="btn btn-primary">Go somewhere</a>
+                                    <a href="@Url.Action("Details", "Home", new { id = im.ID })" class="btn btn-primary">Learn More</a>
 
+                                    <button class="btn btn-danger" onclick="confirmDelete(@im.ID)">Delete</button>
+
+                                    <a href="@Url.Action("Edit", "Home", new { id = im.ID })" class="btn btn-primary">Edit</a>
 
 
                                 </div>
@@ -117,6 +127,14 @@
 
                     }
 
+                    <script>
+                        function confirmDelete(id) {
+                            if (confirm("Are you sure you want to delete this record?"))
+                                {
+                                window.location.href = '@Url.Action("Delete", "Home")/' + id;
+                                }
+                            }
+                    </script>
 
                 </div>
 

@@ -1,0 +1,49 @@
+﻿@model FoodStore.Models.ImageModel
+
+@{
+    ViewBag.Title = "Edit Record";
+}
+
+<style>
+    .label1 {
+        font-size: 24px;
+        color: chocolate;
+        font-family: Arial;
+        font-weight: bold;
+        display: block;
+    }
+
+    body {
+        background-color: lightblue;
+    }
+
+    #label2 {
+        font-size: 20px;
+        color: cornflowerblue;
+    }
+</style>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ID)
+        @Html.EditorFor(model => model.ID)
+        @Html.ValidationMessageFor(model => model.ID)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.vegetable)
+        @Html.EditorFor(model => model.vegetable)
+        @Html.ValidationMessageFor(model => model.vegetable)
+    </div>
+
+
+    <button type="submit">Save Changes</button>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
