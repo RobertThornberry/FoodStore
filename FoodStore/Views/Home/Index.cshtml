@@ -1,80 +1,34 @@
 ﻿@{
-
     ViewBag.Title = "Index";
-
 }
 
 @model IEnumerable<FoodStore.Models.ImageModel>
 
-
-
 <!DOCTYPE html>
-
 <html>
-
-<head>
-
-    <title>Our Products</title>
-
-    <style>
-
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-
-
-        tr:nth-child(even) {
-            background-color: lightblue;
-        }
-    </style>
-
-    <html>
-
     <head>
-
-        <meta name="viewport" content="width=device-width" />
-
-        <title>Test</title>
-
-
-
+        <title>Our Products</title>
         <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
 
-            .label1 {
-                font-size: 24px;
-                color: chocolate;
-                font-family: Arial;
-                font-weight: bold;
-                display: block;
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 0px;
             }
 
             body {
                 background-color: lightblue;
             }
-
-            #label2 {
-                font-size: 20px;
-                color: cornflowerblue;
-            }
         </style>
-
     </head>
 
     <body>
-
         <h1>Our Products</h1>
-
         <div>
             
             <div>
@@ -82,49 +36,24 @@
                 <a href="@Url.Action("CreateImage", "Home")" class="btn btn-primary">Create Image</a>
             </div>
 
-
-
-
-
-
-            <br />
-
-            <br />
-
-            <div class="container mt-3">
-
-                <div class="d-flex flex-wrap bg-light">
-
+            <div class="container mt-3" style="background-color: lightblue">
+                <div class="d-flex flex-wrap ">
+                    
                     <!--code for the individual items-->
                     @foreach (var im in Model)
-
                     {
-
                         <div class="p-2 border" style="background-color: lightblue">
-
                             <div class="card" style="width: 18rem; background-color: plum">
-
                                 <img src="@Url.Action("GetImage", "Home", new { id = im.ID })" alt="@im.vegetable" />
-
                                 <div class="card-body">
-
                                     <h5 class="card-title">@Html.DisplayFor(m => im.vegetable)</h5>
-
                                     <p class="card-text">@Html.DisplayFor(m => im.Category), @Html.DisplayFor(m => im.Price)</p>
-
                                     <a href="@Url.Action("Details", "Home", new { id = im.ID })" class="btn btn-primary">Learn More</a>
-
                                     <button class="btn btn-danger" onclick="confirmDelete(@im.ID)">Delete</button>
-
                                     <a href="@Url.Action("Edit", "Home", new { id = im.ID })" class="btn btn-primary">Edit</a>
-
-
                                 </div>
-
                             </div>
-
                         </div>
-
                     }
 
                     <script>
@@ -135,27 +64,8 @@
                                 }
                             }
                     </script>
-
                 </div>
-
             </div>
-
-
-
-            <br />
-
-            <br />
-
-            <br />
-
-
-
-            @Html.ActionLink("Refresh this page", "../test")
-
-
-
         </div>
-
     </body>
-
 </html>

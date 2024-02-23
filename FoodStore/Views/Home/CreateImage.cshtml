@@ -7,7 +7,7 @@
 <style>
     .label1 {
         font-size: 24px;
-        color: chocolate;
+        color: black;
         font-family: Arial;
         font-weight: bold;
         display: block;
@@ -30,16 +30,9 @@
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
+    
     <div class="form-group">
-        @Html.LabelFor(ImageModel => ImageModel.ID, new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(ImageModel => ImageModel.ID)
-            @Html.ValidationMessageFor(ImageModel => ImageModel.ID)
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(ImageModel => ImageModel.vegetable, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Vegetable</label>
         <div class="col-md-10">
             @Html.EditorFor(ImageModel => ImageModel.vegetable)
             @Html.ValidationMessageFor(ImageModel => ImageModel.vegetable)
@@ -47,7 +40,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(ImageModel => ImageModel.ImageLink, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Image Link</label>
         <div class="col-md-10">
             @Html.EditorFor(ImageModel => ImageModel.ImageLink)
             @Html.ValidationMessageFor(ImageModel => ImageModel.ImageLink)
@@ -55,7 +48,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(ImageModel => ImageModel.Category, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Category</label>
         <div class="col-md-10">
             @Html.EditorFor(ImageModel => ImageModel.Category)
             @Html.ValidationMessageFor(ImageModel => ImageModel.Category)
@@ -63,7 +56,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(ImageModel => ImageModel.Price, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Price</label>
         <div class="col-md-10">
             @Html.EditorFor(ImageModel => ImageModel.Price)
             @Html.ValidationMessageFor(ImageModel => ImageModel.Price)
@@ -71,7 +64,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(ImageModel => ImageModel.ImageSource, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Image Data</label>
         <div class="col-md-10">
             @Html.EditorFor(ImageModel => ImageModel.ImageSource)
             @Html.ValidationMessageFor(ImageModel => ImageModel.ImageSource)

@@ -7,7 +7,7 @@
 <style>
     .label1 {
         font-size: 24px;
-        color: chocolate;
+        color: black;
         font-family: Arial;
         font-weight: bold;
         display: block;
@@ -30,16 +30,9 @@
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
-    <div class="form-group">
-        @Html.LabelFor(model => model.ID, new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ID)
-            @Html.ValidationMessageFor(model => model.ID)
-        </div>
-    </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.vegetable, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Vegetable</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.vegetable)
             @Html.ValidationMessageFor(model => model.vegetable)
@@ -47,7 +40,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.ServingSize, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Serving Size</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.ServingSize)
             @Html.ValidationMessageFor(model => model.ServingSize)
@@ -55,7 +48,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.CountryOfOrigin, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Country Of Origin</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.CountryOfOrigin)
             @Html.ValidationMessageFor(model => model.CountryOfOrigin)
@@ -63,7 +56,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Storage, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Storage</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.Storage)
             @Html.ValidationMessageFor(model => model.Storage)
@@ -71,7 +64,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Packaging, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Packaging</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.Packaging)
             @Html.ValidationMessageFor(model => model.Packaging)
@@ -79,7 +72,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Stock, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Stock</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.Stock)
             @Html.ValidationMessageFor(model => model.Stock)
@@ -87,7 +80,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Category</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.Category)
             @Html.ValidationMessageFor(model => model.Category)
@@ -95,7 +88,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Price, new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2 label1">Price</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.Price)
             @Html.ValidationMessageFor(model => model.Price)

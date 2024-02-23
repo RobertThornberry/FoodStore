@@ -8,7 +8,7 @@
     <style>
         .label1 {
             font-size: 24px;
-            color: chocolate;
+            color: black;
             font-family: Arial;
             font-weight: bold;
             display: block;
@@ -29,14 +29,14 @@
     <h2>Details</h2>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Vegetable)
+            <label class="control-label col-md-2 label1">Vegetable</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Vegetable)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ImageSource)
+            <label class="control-label col-md-2 label1">Image</label>
         </dt>
         <dd>
             <img src="@Url.Action("GetImage", "Home", new { id = Model.ID })" alt="@Model.Vegetable" />
@@ -45,112 +45,112 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Energy)
+            <label class="control-label col-md-2 label1">Energy</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Energy)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Fat)
+            <label class="control-label col-md-2 label1">Fat</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Fat)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Saturates)
+            <label class="control-label col-md-2 label1">Saturates</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Saturates)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Carbohydrates)
+            <label class="control-label col-md-2 label1">Carbohydrates</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Carbohydrates)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Sugars)
+            <label class="control-label col-md-2 label1">Sugars</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Sugars)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Fibre)
+            <label class="control-label col-md-2 label1">Fibre</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Fibre)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Protein)
+            <label class="control-label col-md-2 label1">Protein</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Protein)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Salt)
+            <label class="control-label col-md-2 label1">Salt</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Salt)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Size)
+            <label class="control-label col-md-2 label1">Size</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Size)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ServingSize)
+            <label class="control-label col-md-2 label1">Serving Size</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ServingSize)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CountryOfOrigin)
+            <label class="control-label col-md-2 label1">Country Of Origin</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.CountryOfOrigin)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Storage)
+            <label class="control-label col-md-2 label1">Storage</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Storage)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Packaging)
+            <label class="control-label col-md-2 label1">Packaging</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Packaging)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Stock)
+            <label class="control-label col-md-2 label1">Stock</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Stock)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Category)
+            <label class="control-label col-md-2 label1">Category</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Category)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
+            <label class="control-label col-md-2 label1">Price</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Price)
