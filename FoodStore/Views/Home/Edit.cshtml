@@ -23,18 +23,15 @@
     }
 </style>
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-
 
     <div class="form-group">
         @Html.LabelFor(model => model.vegetable)
         @Html.EditorFor(model => model.vegetable)
         @Html.ValidationMessageFor(model => model.vegetable)
     </div>
-
 
     <button type="submit">Save Changes</button>
 }

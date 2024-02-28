@@ -89,8 +89,9 @@ namespace FoodStore.Controllers
 
         // I ouldn't manage to merge the two creation methods to allow for a user to add data to multiple tables at once by the deadline so they have to be kept as seperate views for the moment.
         // Also, couldn't get individual accounts working in time so currently any person can theoretically change the data of the website. This would obviously need to be fixed if it was releasing to the public.
-        
+
         // Basic controller for declaring the CreateFood.cshtml view
+        [Authorize]
         public ActionResult CreateFood()
         {
             return View();
@@ -113,6 +114,7 @@ namespace FoodStore.Controllers
         }
 
         // Basic controller for declaring the CreateFood.cshtml view
+        [Authorize]
         public ActionResult CreateImage()
         {
             return View();
@@ -136,6 +138,7 @@ namespace FoodStore.Controllers
 
         // Finds the record selected, double checks that the record still exists in the database, deletes the record, then takes the user back to the main page. 
         // This also has an error message in case a user attempts to delete a record that can't be found.
+        [Authorize]
         public ActionResult Delete(int id)
         {
             var recordToDelete = db.ImageDataTable.Find(id);
@@ -152,6 +155,7 @@ namespace FoodStore.Controllers
         }
 
         // This is section one of a two section process. This section finds the record selected, double checks that the record still exists in the database and passes the record on to the second section so it can be edited.
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var recordToEdit = db.ImageDataTable.Find(id);
@@ -171,10 +175,19 @@ namespace FoodStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(editedRecord).State = EntityState.Modified;
-                db.SaveChanges();
+                var existingRecord = db.ImageDataTable.Find(editedRecord.ID);
 
-                return RedirectToAction("Index");
+                if (existingRecord == null)
+                {
+                    return HttpNotFound();
+                }
+
+                // Update only the properties you want to allow modification
+                if (TryUpdateModel(existingRecord, "", new string[] { "vegetable" }))
+                {
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             // If any errors appear, the user is kept on the edit page and told what the errors are
